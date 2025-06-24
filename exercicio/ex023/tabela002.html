@@ -11,14 +11,44 @@
         table{
             width: 500px;
             border-collapse: collapse;
+            position: relative;
         }
+
         td, th{
             border: 1px solid black;
             padding: 10px;
         }
+
+        caption{
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+            background-color: lightgray;
+        }
         thead, tfoot {
             background-color: gray;
             color: white;
+        }
+
+        thead > tr > th{
+            position: sticky;
+            top: 0;
+            background-color: gray;
+        }
+        /*
+        Efeito zebrado
+        Impar:
+        tbody > tr:nth-child(odd){
+            background-color: lightgray;
+        }
+        Par:
+        tbody > tr:nth-child(even){
+            background-color: lightgray;
+        }
+            
+        */
+        tbody > tr:nth-child(2n){
+            background-color: lightgray;
         }
 
         td.num{
@@ -29,14 +59,15 @@
 <body>
     <h1>Uso de tabelas grandes</h1>
     <table>
+        <caption>População dos Estados</caption>
         <thead>
-            <th>Estado</th>
-            <th>População</th>
+            <th scope="col">Estado</th>
+            <th scope="col" style="width: 50px;">População</th>
         </thead>
         <tbody>
             <tr>
                 <td>São Paulo</td>
-                <td class="num">45 919 049</td>
+                <td class="num">45.919.049</td>
             </tr>
             <tr>
                 <td>Minas Gerais</td>
@@ -46,11 +77,39 @@
                 <td>Rio de Janeiro</td>
                 <td class="num">17.264.943</td>
             </tr>
+            <tr>
+                <td>Bahia</td>
+                <td class="num">11.850.513</td>
+            </tr>
+            <tr>
+                <td>Paraná</td>
+                <td class="num">11.824.665</td>
+            </tr>
+            <tr>
+                <td>Rio Grande do Sul</td>
+                <td class="num">11.229.915</td>
+            </tr>
+            <tr>
+                <td>Pernambuco</td>
+                <td class="num">9.539.029</td>
+            </tr>
+            <tr>
+                <td>Ceará</td>
+                <td class="num">9.233.656</td>
+            </tr>
+            <tr>
+                <td>Pará</td>
+                <td class="num">8.664.306</td>
+            </tr>
+            <tr>
+                <td>Santa Catarina</td>
+                <td class="num">8.058.441</td>
+            </tr>
         </tbody>
         <tfoot>
             <tr>
-                <th>Total de Habitantes</th>
-                <td class="num">84.352.783</td>
+                <th scope="row">Total de Habitantes</th>
+                <td class="num">142.928.643</td>
             </tr>
         </tfoot>
     </table>
